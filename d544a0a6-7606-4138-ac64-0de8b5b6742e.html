@@ -74,7 +74,7 @@
         <link href="styles.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <h1></h1>
+        <h1>My personal blog</h1>
         <ol></ol>
         <table style="width:100%">
             <tr>
@@ -111,11 +111,104 @@
             </ul>
         </div>
         <footer>
-            <p>
+            <p id="container">
                 Author:Zukhriddin Akhmedov<br>
-            <a href="mailto:akhmed0301@gmail.com">Contact by email</a>
-            <p>Location:London,United Kingdom,Mina Road,4</p>
+            <a href="mailto:akhmed0301@gmail.com">Contact by email</a><br>
+            Location:London,United Kingdom,Mina Road,4
             </p>
         </footer>
+        <script>
+         /*
+        21) Given variable x = "John" and y = "Doe", write on the console log "John <> Doe"
+        22) Create an object with properties such name, surname, email
+        23) Delete Email from the previously created object
+        24) Create an array with 10 strings in it
+        25) Print in the console every string in the previous array
+        26) Create an array with 100 random numbers in it
+        27) Wrote a function to get the MAX and the MIN from the previously created array
+        28) Create an array of arrays, in which every array has 10 random numbers
+        29) Create a function that gets 2 arrays and returns the longest one
+        30) Create a function that gets 2 arrays of numbers and returns the one with the higher sum of values
+        */
+        let names = function () {
+         x = "John"
+         y = "Doe"
+         console.log("John <> Doe")
+        }
+        names()
+
+        const properties = {name:"Zukhriddin", suranme:"Akhmedov", email:"akhmed0301@gmai;.com"}
+        delete properties.email
+
+        const students = ["Student1", "Student2", "Student3", "Student4", "Student5", "Student6", "Student7", "Student8", "Student9", "Student10"]
+        console.log(students)
+
+        const arr = []
+        for (let i = 0; i < 100; i++){
+            arr.push(Math.round(Math.random () * 100))
+        }
+         console.log(arr)
+
+        function maxArr(arr){
+            return Math.max.apply(null, arr)
+        }
+        function minArr(arr){
+            return Math.min.apply(null ,arr)
+        }
+        console.log(maxArr(arr))
+        console.log(minArr(arr))
+        //31) Get element with ID "container" from the page
+        const idelm  = document.getElementById("container")
+        //32) Get every "td" from the page
+        const tds = document.querySelectorAll("td")
+        //33) Create a cycle that prints the text inside every td of the page
+        tds.forEach((td) => {
+            td.innerText = "text"
+        })
+        //34) Write a function to change the heading of the page
+        const headPage = function(){
+         const heading = document.querySelector('h1')
+         heading.innerText = "Heading changed"
+        }
+        headPage()
+        //35) Write a function to add an extra row to the table
+        const extraRow = function() {
+            const tbr = document.querySelector ('tr')
+            const tr = document.createElement("tr")
+            const td = document.createElement("td")
+            td.innerText = "New Row"
+            tr.appendChild(td)
+            tbr.appendChild(tr)
+        }
+        extraRow()
+        //36) Write a function to add the class "test" to each row in the table
+        const newClass = function(){
+            const trs = document.querySelectorAll('tr')
+            trs.forEach((tr) =>{
+            tr.classList.add("test")
+            })
+        }
+        newClass()
+        //37) Write a function to add a red background to every link in the page
+
+        //38) Console log "Page loaded" when the page is correctly loaded
+        window.onload = function(){
+            console.log("Page Loaded")
+        }
+        //39) Write a function to add new items to a UL
+        const newItems = function(){
+            const ul = document.querySelector("ul")
+            const li = document.createElement("li")
+            li.innerText = "new list item"
+            ul.appendChild(li)
+        }
+        newItems()
+        //40) Write a function to empty a list
+        const emptyLi = function(){
+            const ul = document.querySelector("ul")
+            ul.innerHTML = ""
+        }
+        emptyLi()
+        </script>
     </body>
 </html>
